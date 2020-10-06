@@ -10,6 +10,7 @@
     <RepositoryUrl>https://github.com/Vromeza/PamposTools.SaferPay</RepositoryUrl>
     <PackageTags>SaferPay, SIXPayments, SaferPayNET</PackageTags>
     <GeneratePackageOnBuild>false</GeneratePackageOnBuild>
+    <Version>1.1.0</Version>
   </PropertyGroup>
 
   <ItemGroup>
