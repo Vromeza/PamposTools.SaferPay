@@ -7,6 +7,9 @@ pool:
 variables:
   configuration: 'Release'
   projectPath: '**/*.csproj'
+  Major: '1'
+  Minor: '0'
+  Patch: '1'
 
 steps:
 - task: UseDotNet@2
@@ -30,9 +33,9 @@ steps:
     packagesToPack: $(projectPath)
     nobuild: true
     versioningScheme: 'byPrereleaseNumber'
-    majorVersion: '1'
-    minorVersion: '0'
-    patchVersion: '0'
+    majorVersion: '$(Major)'
+    minorVersion: '$(Minor)'
+    patchVersion: '$(Patch)'
 
 - task: PublishBuildArtifacts@1
   displayName: 'Publish the package'
