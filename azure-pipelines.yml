@@ -1,13 +1,13 @@
 trigger:
 - master
-​
+
 pool:
   vmImage: 'windows-latest'
-​
+
 variables:
   configuration: 'Release'
   projectPath: '**/*.csproj'
-​
+
 steps:
 - task: UseDotNet@2
   displayName: 'Install .NET Core SDK'
@@ -21,7 +21,7 @@ steps:
     command: 'build'
     configuration: $(configuration)
     projects: $(projectPath)
-​
+
 - task: DotNetCoreCLI@2
   displayName: 'Pack the package'
   inputs:
@@ -33,7 +33,7 @@ steps:
     majorVersion: '1'
     minorVersion: '0'
     patchVersion: '0'
-​
+
 - task: PublishBuildArtifacts@1
   displayName: 'Publish the package'
   inputs:
